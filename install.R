@@ -1,1 +1,1 @@
-install.packages("ggplot2")
+ devtools::install_github('benmarwick/rrtools')
