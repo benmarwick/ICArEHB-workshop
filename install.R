@@ -1,1 +1,1 @@
- devtools::install_github('benmarwick/rrtools')
+ devtools::install_github("benmarwick/rrtools")
