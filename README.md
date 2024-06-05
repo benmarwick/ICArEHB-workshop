@@ -1,68 +1,10 @@
-# Template for RStudio on Binder / JupyterHub
-
+# ICArEHB Open Science Seminar, June 2024
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benmarwick/ICArEHB-workshop/HEAD?urlpath=rstudio)
 
-Generate a Git repository that can run R code with RStudio on
-the browser via [mybinder.org](https://mybinder.org) or any JupyterHub
-from this template repository!
+This repository contains a Dockerfile to provide RStudio on JupyterHub for the seminar. Click on the ['launch binder'](https://mybinder.org/v2/gh/benmarwick/ICArEHB-workshop/HEAD?urlpath=rstudio) button above to open RStudio in your web browser to write and run code in your web browser. Note that no log in required, and file changes do not persist beyond the current session. This is just for practicing and exploring. 
 
-Based on the [rocker/geospatial](https://hub.docker.com/r/rocker/geospatial)
-image.
+<!-- 
+I update the Dockerfile to provide a custom set of R packages to the class so they don't have to install anything. The browser-based instance of RStudio for the class is freely accessible to registered students here: https://jupyter.rttl.uw.edu/2023-spring-archy-488-a/user-redirect/rstudio (UW ID log in required, file storage is attached to your UW ID and persists through the quarter). To make this work for UW-IT, I activate 'Actions' in 'Settings', then trigger a run, e.g. by updating the README, which builds a package hosted on GitHub's container registery. I send the URL of the package to UW-IT. 
 
-## How to use this repo
-
-### 1. Create a new repo using this as a template
-
-Use the [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)
-button on GitHub. Use a descriptive name representing the
-GUI app you are running / demoing. You can then follow the rest of
-the instructions in this README from your newly created repository.
-
-### 2. Install any packages you want
-
-You can create an `install.R` file that will be executed on build.
-Use `install.packages` or `devtools::install_version`.
-
-```R
-install.packages("ggplot2")
-```
-
-Packages are installed from [packagemanager.rstudio.com](https://packagemanager.rstudio.com/client/#/),
-and binary packages are preferred wherever possible. For some R packages,
-you might need to install system packages via apt - you can do so by writing
-out a list of apt package names in `apt.txt`.
-
-### 3. Modify the Binder Badge in the README.md
-
-The 'Launch on Binder' badge in this README points to the template repository.
-You should modify it to point to your own repository. Keep the `urlpath=rstudio`
-parameter intact - that is what makes sure your repo will launch directly into
-RStudio
-
-### 4. Add your R code and update README
-
-Finally, add the R code you want to demo to the repository! Cleanup the README
-too so it talks about your code, not these instructions on setting up this repo
-
-## Troubleshooting
-
-**It didn't work! What do I do now?**.  If you are installing additional R
-*packages, this will sometimes fail when a package requires an external library
-*that is not found on the container.  We're working on a more elegant solution
-*for this case, but meanwhile, you'll need to modify the Dockerfile to install
-*these libraries.  For instance, the `gsl` [R package page
-*reads](https://packagemanager.rstudio.com/client/#/repos/1/packages/gsl)
-
-```shell
-# Install System Prerequisites for Ubuntu 20.04 (focal)
-apt-get install -y libgsl0-dev
-```
-
-To solve this, you will need to add the following line to your `apt.txt` file:
-
-```txt
-libgsl0-dev
-```
-
-Or, just get in touch by opening an issue. We'll try and resolve common cases so
-more things work out of the box.
+If you have a GitHub account, you can also click here to [open a codespaces tab](https://codespaces.new/benmarwick/ICArEHB-open-science-seminar?quickstart=1), wait a few moments for the virtual machine to lauch a customized Visual Studio Code interface in your browser. Then click on the Ports tab (this may take another moment to appear after the instance opens), and clicking on the "globe" icon to open the link. This should open a new tab showing an RStudio login page. The default login user/password here is rstudio/rstudio. Once RStudio opens, consider using File -> New Project
+-->
