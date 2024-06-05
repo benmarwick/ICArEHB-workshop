@@ -6,13 +6,6 @@ ARG NB_UID
 
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
-RUN echo "Checking for 'apt.txt'..." \
-        ; if test -f "apt.txt" ; then \
-        apt-get update --fix-missing > /dev/null\
-        && xargs -a apt.txt apt-get install --yes \
-        && apt-get clean > /dev/null \
-        && rm -rf /var/lib/apt/lists/* \
-        ; fi
 USER ${NB_USER}
 
 RUN R -e "remotes::install_github('benmarwick/rrtools')" 
