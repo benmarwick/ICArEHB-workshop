@@ -4,8 +4,6 @@ FROM rocker/binder:4.2.0
 ARG NB_USER
 ARG NB_UID
 
-COPY --chown=${NB_USER} . ${HOME}
-
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
 RUN echo "Checking for 'apt.txt'..." \
